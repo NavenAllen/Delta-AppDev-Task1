@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/backgroundView"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    tools:context="navenallen.deltatask1.MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:hint="Red value"
+            android:textSize="25sp"
+            android:drawable="@color/colorPrimary"
+            android:gravity="center"
+            android:background="@drawable/back"
+            android:layout_marginRight="10dp"
+            android:id="@+id/redTextView"/>
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:hint="Blue Value"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:background="@drawable/back"
+            android:id="@+id/greenTextView"/>
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:hint="Blue Value"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:background="@drawable/back"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/blueTextView"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Red"
+            android:id="@+id/redButton"
+            android:onClick="incRed"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Green"
+            android:onClick="incGreen"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Blue"
+            android:onClick="incBlue"/>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Reset"
+        android:onClick="resetRGB"/>
+
+
+
+</LinearLayout>
