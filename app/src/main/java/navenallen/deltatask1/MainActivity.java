@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,56 @@ public class MainActivity extends AppCompatActivity {
         g = rgbValues.getInt("g", 0);
         b = rgbValues.getInt("b", 0);
         setViewColor();
+        SeekBar redSeekBar = (SeekBar)findViewById(R.id.redSeekBar);
+        redSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                r=progress;
+                setViewColor();
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
+        SeekBar greenSeekBar = (SeekBar)findViewById(R.id.greenSeekBar);
+        greenSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                g=progress;
+                setViewColor();
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
+        SeekBar blueSeekBar = (SeekBar)findViewById(R.id.blueSeekBar);
+        blueSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                b=progress;
+                setViewColor();
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
     }
 
     public void setViewColor(){
@@ -34,36 +85,6 @@ public class MainActivity extends AppCompatActivity {
         red.setText(r+"\0");
         blue.setText(b+"\0");
         green.setText(g+"\0");
-    }
-
-    public void incRed(View view){
-        if(r<245)
-            r += 10;
-        else {
-            r = 0;
-            Toast.makeText(MainActivity.this, "Red maximum limit reached!", Toast.LENGTH_SHORT).show();
-        }
-        setViewColor();
-    }
-
-    public void incGreen(View view){
-        if(g<245)
-            g += 10;
-        else {
-            g = 0;
-            Toast.makeText(MainActivity.this, "Green maximum limit reached!", Toast.LENGTH_SHORT).show();
-        }
-        setViewColor();
-    }
-
-    public void incBlue(View view){
-        if(b<245)
-            b += 10;
-        else {
-            b = 0;
-            Toast.makeText(MainActivity.this, "Blue maximum limit reached!", Toast.LENGTH_SHORT).show();
-        }
-        setViewColor();
     }
 
     public void resetRGB(View view){

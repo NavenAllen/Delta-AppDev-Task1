@@ -30,7 +30,7 @@
         <TextView
             android:layout_width="80dp"
             android:layout_height="35dp"
-            android:hint="Blue Value"
+            android:hint="Green Value"
             android:textSize="25sp"
             android:gravity="center"
             android:background="@drawable/back"
@@ -53,24 +53,32 @@
         android:orientation="horizontal"
         android:gravity="center_horizontal">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Red"
-            android:id="@+id/redButton"
-            android:onClick="incRed"/>
+        <SeekBar
+            android:layout_width="80dp"
+            android:layout_height="25sp"
+            android:thumbTint="@color/Red"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/redSeekBar"
+            android:progressTint="@color/Black"
+            android:max="255"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Green"
-            android:onClick="incGreen"/>
+        <SeekBar
+            android:layout_width="80dp"
+            android:layout_height="25sp"
+            android:thumbTint="@color/Green"
+            android:layout_gravity="center_vertical"
+            android:progressTint="@color/Black"
+            android:id="@+id/greenSeekBar"
+            android:max="255"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Blue"
-            android:onClick="incBlue"/>
+        <SeekBar
+            android:layout_width="80dp"
+            android:layout_height="25sp"
+            android:thumbTint="@color/Blue"
+            android:layout_gravity="center_vertical"
+            android:progressTint="@color/Black"
+            android:id="@+id/blueSeekBar"
+            android:max="255"/>
     </LinearLayout>
 
     <Button
